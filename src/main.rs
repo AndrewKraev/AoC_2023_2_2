@@ -55,7 +55,20 @@ fn main(){
        }
        y = y+1;
     }
-    for a in so {
-        println!("{:?}",a);
-    }
+//    println!("{}", so.len());
+    for a in 0..so.len() {
+        println!("{:?}",so[a]);
+        if so[a].f {
+            let b = so[a].id.parse::<i32>().unwrap();
+            println!("{}", b);
+            for l in a+1..so.len() {
+                if so[l].f {
+                   println!("{} ",so[l].id.parse::<i32>().unwrap());
+                }
+            }
+        } else {
+             println!("Символ.");
+        }
+     }
+
 }
